@@ -43,12 +43,8 @@ public class UserDao implements DAO<User>{
         String sql = "SELECT * FROM users WHERE email = ? AND password = ?;";
         try {
             PreparedStatement ps = DBConnection.getConnection().prepareStatement(sql);
-            ps.setString(1, email);
-            ps.setString(2, upass);
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()){
-                return true;
-            }
+            
+            
         } catch (SQLException ex) {
             Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
         }
