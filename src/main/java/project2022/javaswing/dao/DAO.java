@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public interface DAO<T> {
     ArrayList<T> getAll();
-    
+    T getDetail(T t) ;
     void insertDao(T t);
     void updateDao(T t);
     void deleteDao(T t);

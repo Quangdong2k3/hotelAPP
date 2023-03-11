@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  */
 public class DBConnection {
     private static Connection conn;
-    private static final String url = "jdbc:mysql://localhost:3306/demo";
+    private static final String url = "jdbc:mysql://localhost:3306/hotel";
     
     
     public static Connection getConnection () {
