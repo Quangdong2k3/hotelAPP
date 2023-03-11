@@ -150,7 +150,7 @@ public class UserDao implements DAO<User> {
         UserDao ud = new UserDao();
         Date date = Date.valueOf("2015-03-31");
         User user = new User();
-        user.setManhanvien(1);
+        user.setManhanvien(2);
         System.out.println(ud.getDetail(user).toString());
     }
 
