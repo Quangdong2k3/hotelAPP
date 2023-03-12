@@ -146,12 +146,5 @@ public class UserDao implements DAO<User> {
         return user;
     }
 
-    public static void main(String[] args) {
-        UserDao ud = new UserDao();
-        Date date = Date.valueOf("2015-03-31");
-        User user = new User();
-        user.setManhanvien(2);
-        System.out.println(ud.getDetail(user).toString());
-    }
 
 }

@@ -6,36 +6,38 @@
 package project2022.javaswing.dao;
 
 import java.util.ArrayList;
+import project2022.javaswing.models.RoomType;
 
 /**
  *
  * @author Ching
  */
-public class RoomTypeDao implements DAO {
+public class RoomTypeDao implements DAO<RoomType> {
 
     @Override
-    public ArrayList getAll() {
+    public ArrayList<RoomType> getAll() {
+    }
+
+    @Override
+    public RoomType getDetail(RoomType t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void insertDao(Object t) {
+    public void insertDao(RoomType t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void updateDao(Object t) {
+    public void updateDao(RoomType t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void deleteDao(Object t) {
+    public void deleteDao(RoomType t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public Object getDetail(Object t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
     
 }
