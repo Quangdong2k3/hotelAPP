@@ -53,9 +53,15 @@ public class RoomDao implements DAO<Room> {
                 tmp.setLoaiphong(rs.getInt("loaiphong"));
                 tmp.setGia(rs.getInt("gia"));
                 tmp.setTrangthai(rs.getInt("trangthai"));
+                DBConnection.getConnection().commit();
             }
         } catch (SQLException ex) {
-            Logger.getLogger(RoomDao.class.getName()).log(Level.SEVERE, null, ex);
+            try {
+                Logger.getLogger(RoomDao.class.getName()).log(Level.SEVERE, null, ex);
+                DBConnection.getConnection().rollback();
+            } catch (SQLException ex1) {
+                Logger.getLogger(RoomDao.class.getName()).log(Level.SEVERE, null, ex1);
+            }
         }
         return tmp;
     }
