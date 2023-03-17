@@ -6,6 +6,8 @@
 package project2022.javaswing.view;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
+import project2022.javaswing.dao.UserDao;
 
 /**
  *
@@ -40,7 +42,7 @@ public class LoginFrame extends javax.swing.JFrame {
         underbgP = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         eyehide = new javax.swing.JLabel();
-        txtpass = new javax.swing.JPasswordField();
+        txtPass = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
         isAdmin = new javax.swing.JRadioButton();
         isStaff = new javax.swing.JRadioButton();
@@ -99,37 +101,37 @@ public class LoginFrame extends javax.swing.JFrame {
         });
         getContentPane().add(eyehide, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, -1, -1));
 
-        txtpass.setBackground(new java.awt.Color(240, 240, 240));
-        txtpass.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtpass.setBorder(null);
-        txtpass.addFocusListener(new java.awt.event.FocusAdapter() {
+        txtPass.setBackground(new java.awt.Color(240, 240, 240));
+        txtPass.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtPass.setBorder(null);
+        txtPass.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                txtpassFocusLost(evt);
+                txtPassFocusLost(evt);
             }
         });
-        txtpass.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtPass.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtpassMouseClicked(evt);
+                txtPassMouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                txtpassMouseExited(evt);
+                txtPassMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                txtpassMousePressed(evt);
+                txtPassMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                txtpassMouseReleased(evt);
+                txtPassMouseReleased(evt);
             }
         });
-        txtpass.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtPass.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtpassKeyPressed(evt);
+                txtPassKeyPressed(evt);
             }
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtpassKeyReleased(evt);
+                txtPassKeyReleased(evt);
             }
         });
-        getContentPane().add(txtpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 300, 30));
+        getContentPane().add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 300, 30));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("Mật Khẩu:");
@@ -200,54 +202,54 @@ public class LoginFrame extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btncloseMouseClicked
 
-    private void txtpassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtpassMouseClicked
+    private void txtPassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPassMouseClicked
         // TODO add your handling code here:
 //        String pass =  (String) txtpass.getText();
 //        if(pass.equals("")||pass.length()==0||pass==null){
         underbgP.setBackground(Color.blue);
 //        }
-    }//GEN-LAST:event_txtpassMouseClicked
+    }//GEN-LAST:event_txtPassMouseClicked
 
-    private void txtpassMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtpassMouseExited
+    private void txtPassMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPassMouseExited
         // TODO add your handling code here:
         //underbgP.setBackground(Color.gray);
 
 
-    }//GEN-LAST:event_txtpassMouseExited
+    }//GEN-LAST:event_txtPassMouseExited
 
-    private void txtpassMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtpassMousePressed
+    private void txtPassMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPassMousePressed
         // TODO add your handling code here:
         //underbgP.setBackground(Color.blue);
-    }//GEN-LAST:event_txtpassMousePressed
+    }//GEN-LAST:event_txtPassMousePressed
 
-    private void txtpassMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtpassMouseReleased
+    private void txtPassMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPassMouseReleased
         // TODO add your handling code here:
         underbgP.setBackground(Color.GRAY);
 
-    }//GEN-LAST:event_txtpassMouseReleased
+    }//GEN-LAST:event_txtPassMouseReleased
 
-    private void txtpassFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtpassFocusLost
+    private void txtPassFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPassFocusLost
         // TODO add your handling code here:
         underbgP.setBackground(Color.GRAY);
 
-    }//GEN-LAST:event_txtpassFocusLost
+    }//GEN-LAST:event_txtPassFocusLost
 
-    private void txtpassKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpassKeyPressed
+    private void txtPassKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPassKeyPressed
         // TODO add your handling code here:
         // TODO add your handling code here:
-        String pass = (String) txtpass.getText();
+        String pass = (String) txtPass.getText();
         if (!pass.equals("") && pass != null) {
             eyehide.setVisible(true);
         } else {
             eyehide.setVisible(false);
 
         }
-    }//GEN-LAST:event_txtpassKeyPressed
+    }//GEN-LAST:event_txtPassKeyPressed
 
-    private void txtpassKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpassKeyReleased
+    private void txtPassKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPassKeyReleased
         // TODO add your handling code here:
 
-    }//GEN-LAST:event_txtpassKeyReleased
+    }//GEN-LAST:event_txtPassKeyReleased
 
     private void txtEmailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtEmailMouseClicked
         // TODO add your handling code here:
@@ -262,7 +264,7 @@ public class LoginFrame extends javax.swing.JFrame {
 
     private void eyehideMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eyehideMouseClicked
         // TODO add your handling code here:
-        txtpass.setEchoChar((char) 0);
+        txtPass.setEchoChar((char) 0);
         eyehide.setVisible(false);
         eyeshow.setVisible(true);
 
@@ -275,7 +277,7 @@ public class LoginFrame extends javax.swing.JFrame {
 
     private void eyeshowMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eyeshowMouseClicked
         // TODO add your handling code here:
-        txtpass.setEchoChar('\u25CF');
+        txtPass.setEchoChar('\u25CF');
         eyehide.setVisible(true);
         eyeshow.setVisible(false);
     }//GEN-LAST:event_eyeshowMouseClicked
@@ -283,14 +285,25 @@ public class LoginFrame extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
 
+
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
         // TODO add your handling code here:
-        this.setVisible(false);
-        HomeFrame hF = new HomeFrame();
-        hF.setVisible(true);
-        
+
+        UserDao ud = new UserDao();
+        String uemail = txtEmail.getText();
+        String upass = txtPass.getText();
+        String error = "Login fail";
+        if (ud.checkLogin(uemail, upass) == true) {
+            this.setVisible(false);
+            HomeFrame hF = new HomeFrame();
+            hF.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, error);
+        }
+
+
     }//GEN-LAST:event_btnLoginMouseClicked
 
     /**
@@ -343,7 +356,7 @@ public class LoginFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField txtEmail;
-    private javax.swing.JPasswordField txtpass;
+    private javax.swing.JPasswordField txtPass;
     private javax.swing.JLabel underbgE1;
     private javax.swing.JLabel underbgP;
     // End of variables declaration//GEN-END:variables

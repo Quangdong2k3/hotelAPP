@@ -5,6 +5,9 @@
  */
 package project2022.javaswing.view;
 
+import javax.swing.JDesktopPane;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Computer
@@ -46,6 +49,7 @@ public class HomeFrame extends javax.swing.JFrame {
         setTitle("Quản Lý Khách Sạn");
 
         jDesktopPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jDesktopPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -174,6 +178,7 @@ public class HomeFrame extends javax.swing.JFrame {
 
     private void btnManagementBookingRoomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnManagementBookingRoomMouseClicked
         // TODO add your handling code here:
+        jDesktopPane1.getComponent(0).setVisible(false);
         jDesktopPane1.removeAll();
         BookingRoom bk = new BookingRoom();
         jDesktopPane1.add(bk).setVisible(true);
@@ -181,38 +186,44 @@ public class HomeFrame extends javax.swing.JFrame {
 
     private void btnManagementFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagementFoodActionPerformed
         // TODO add your handling code here:
-        jDesktopPane1.removeAll();
+        jDesktopPane1.getComponent(0).setVisible(false);
+        jDesktopPane1.remove(0);
         MangamentFood mF = new MangamentFood();
         jDesktopPane1.add(mF).setVisible(true);
     }//GEN-LAST:event_btnManagementFoodActionPerformed
 
     private void btnManagementEmplActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagementEmplActionPerformed
         // TODO add your handling code here:
-        jDesktopPane1.removeAll();
+        jDesktopPane1.getComponent(0).setVisible(false);
+        jDesktopPane1.remove(0);
         ManagementEmployee Me = new project2022.javaswing.view.ManagementEmployee();
         jDesktopPane1.add(Me).setVisible(true);
     }//GEN-LAST:event_btnManagementEmplActionPerformed
 
     private void btnManagementRoomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagementRoomActionPerformed
         // TODO add your handling code here:
-        jDesktopPane1.removeAll();
+        jDesktopPane1.getComponent(0).setVisible(false);
+        jDesktopPane1.remove(0);
         ManagementRoom mR = new ManagementRoom();
         jDesktopPane1.add(mR).setVisible(true);
     }//GEN-LAST:event_btnManagementRoomActionPerformed
 
     private void btnManagementGuessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagementGuessActionPerformed
         // TODO add your handling code here:
-        jDesktopPane1.removeAll();
+        jDesktopPane1.getComponent(0).setVisible(false);
+        jDesktopPane1.remove(0);
         ManagementGuess mG = new ManagementGuess();
         jDesktopPane1.add(mG).setVisible(true);
     }//GEN-LAST:event_btnManagementGuessActionPerformed
 
     private void btnManagementStaticssActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagementStaticssActionPerformed
         // TODO add your handling code here:
-        jDesktopPane1.removeAll();
+        jDesktopPane1.getComponent(0).setVisible(false);
+        jDesktopPane1.remove(0);
         ManagementStatistics mS = new ManagementStatistics();
         jDesktopPane1.add(mS);
         mS.setVisible(true);
+
     }//GEN-LAST:event_btnManagementStaticssActionPerformed
 
     private void btnManagementBookingRoomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagementBookingRoomActionPerformed
