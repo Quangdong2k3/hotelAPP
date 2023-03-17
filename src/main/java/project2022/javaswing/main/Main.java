@@ -5,7 +5,7 @@
  */
 package project2022.javaswing.main;
 
-import project2022.javaswing.view.MainFrame;
+import project2022.javaswing.view.LoginFrame;
 
 /**
  *
@@ -13,7 +13,7 @@ import project2022.javaswing.view.MainFrame;
  */
 public class Main {
     public static void main(String[] args) {
-        MainFrame mf = new MainFrame();
+        LoginFrame mf = new LoginFrame();
         mf.setVisible(true);
     }
 }
