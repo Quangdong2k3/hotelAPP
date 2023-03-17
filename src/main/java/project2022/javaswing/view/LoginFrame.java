@@ -14,7 +14,7 @@ import java.awt.Color;
 public class LoginFrame extends javax.swing.JFrame {
 
     /**
-     * Creates new form MainFrame
+     * Creates new form HomeFrame
      */
     public LoginFrame() {
         initComponents();
@@ -149,6 +149,16 @@ public class LoginFrame extends javax.swing.JFrame {
         btnLogin.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Đăng Nhập");
+        btnLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnLoginMouseClicked(evt);
+            }
+        });
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 600, 220, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/hotel_1.png"))); // NOI18N
@@ -230,13 +240,13 @@ public class LoginFrame extends javax.swing.JFrame {
             eyehide.setVisible(true);
         } else {
             eyehide.setVisible(false);
-            
+
         }
     }//GEN-LAST:event_txtpassKeyPressed
 
     private void txtpassKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpassKeyReleased
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_txtpassKeyReleased
 
     private void txtEmailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtEmailMouseClicked
@@ -260,7 +270,7 @@ public class LoginFrame extends javax.swing.JFrame {
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void eyeshowMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eyeshowMouseClicked
@@ -269,6 +279,19 @@ public class LoginFrame extends javax.swing.JFrame {
         eyehide.setVisible(true);
         eyeshow.setVisible(false);
     }//GEN-LAST:event_eyeshowMouseClicked
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        HomeFrame hF = new HomeFrame();
+        hF.setVisible(true);
+        
+    }//GEN-LAST:event_btnLoginMouseClicked
 
     /**
      * @param args the command line arguments
