@@ -14,11 +14,14 @@ import java.awt.Color;
 public class LoginFrame extends javax.swing.JFrame {
 
     /**
-     * Creates new form MainFrame
+     * Creates new form HomeFrame
      */
     public LoginFrame() {
         initComponents();
-        getContentPane().setBackground(Color.blue);
+        eyehide.setVisible(false);
+        underbgE1.setBackground(Color.gray);
+        underbgP.setBackground(Color.gray);
+        eyeshow.setVisible(false);
     }
 
     /**
@@ -31,128 +34,264 @@ public class LoginFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         groupIsAdminofStaff = new javax.swing.ButtonGroup();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        txtEmail = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        underbgP = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        eyehide = new javax.swing.JLabel();
+        txtpass = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jLabel5 = new javax.swing.JLabel();
+        isAdmin = new javax.swing.JRadioButton();
+        isStaff = new javax.swing.JRadioButton();
+        btnLogin = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        btnclose = new javax.swing.JLabel();
+        underbgE1 = new javax.swing.JLabel();
+        eyeshow = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Đăng Nhập");
         setBackground(new java.awt.Color(102, 102, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setUndecorated(true);
-
-        jPanel1.setBackground(new java.awt.Color(51, 102, 255));
-        jPanel1.setOpaque(false);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hotel_1.png"))); // NOI18N
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 102, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Đăng Nhập");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, -1, -1));
+
+        txtEmail.setBackground(new java.awt.Color(240, 240, 240));
+        txtEmail.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtEmail.setBorder(null);
+        txtEmail.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtEmailFocusLost(evt);
+            }
+        });
+        txtEmail.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtEmailMouseClicked(evt);
+            }
+        });
+        getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, 300, 30));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("Email:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
+
+        underbgP.setBackground(new java.awt.Color(0, 0, 0));
+        underbgP.setIconTextGap(2);
+        underbgP.setOpaque(true);
+        getContentPane().add(underbgP, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 300, 2));
+
+        jLabel7.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel7.setOpaque(true);
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, -1, -1));
+
+        eyehide.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/hidden.png"))); // NOI18N
+        eyehide.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                eyehideMouseClicked(evt);
+            }
+        });
+        getContentPane().add(eyehide, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, -1, -1));
+
+        txtpass.setBackground(new java.awt.Color(240, 240, 240));
+        txtpass.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtpass.setBorder(null);
+        txtpass.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtpassFocusLost(evt);
+            }
+        });
+        txtpass.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtpassMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                txtpassMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtpassMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                txtpassMouseReleased(evt);
+            }
+        });
+        txtpass.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtpassKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtpassKeyReleased(evt);
+            }
+        });
+        getContentPane().add(txtpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 300, 30));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("Mật Khẩu:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(51, 102, 255));
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 51, 51));
-        jButton1.setText("Đăng Nhập");
+        groupIsAdminofStaff.add(isAdmin);
+        isAdmin.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        isAdmin.setText("Quản Lý");
+        getContentPane().add(isAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 520, -1, -1));
 
-        groupIsAdminofStaff.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jRadioButton1.setText("Quản Lý");
+        groupIsAdminofStaff.add(isStaff);
+        isStaff.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        isStaff.setText("Nhân Viên");
+        getContentPane().add(isStaff, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 520, -1, -1));
 
-        groupIsAdminofStaff.add(jRadioButton2);
-        jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jRadioButton2.setText("Nhân Viên");
+        btnLogin.setBackground(new java.awt.Color(51, 102, 255));
+        btnLogin.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnLogin.setForeground(new java.awt.Color(255, 255, 255));
+        btnLogin.setText("Đăng Nhập");
+        btnLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnLoginMouseClicked(evt);
+            }
+        });
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 600, 220, 40));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/close (1).png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/hotel_1.png"))); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 120, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jRadioButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 317, Short.MAX_VALUE)
-                                .addComponent(jRadioButton2))
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(71, 71, 71))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(90, 90, 90)))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
-                                    .addComponent(jTextField1)))
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel1)
-                        .addGap(85, 85, 85))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(72, 72, 72))))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel5)
-                .addGap(37, 37, 37)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(70, 70, 70)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(78, 78, 78)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
-                        .addGap(106, 106, 106)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(46, 46, 46))))
-        );
+        btnclose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/close (1).png"))); // NOI18N
+        btnclose.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btncloseMouseClicked(evt);
+            }
+        });
+        getContentPane().add(btnclose, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 10, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1048, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        underbgE1.setBackground(new java.awt.Color(0, 0, 0));
+        underbgE1.setIconTextGap(2);
+        underbgE1.setName(""); // NOI18N
+        underbgE1.setOpaque(true);
+        getContentPane().add(underbgE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 300, 2));
+
+        eyeshow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eye.png"))); // NOI18N
+        eyeshow.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                eyeshowMouseClicked(evt);
+            }
+        });
+        getContentPane().add(eyeshow, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btncloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btncloseMouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btncloseMouseClicked
+
+    private void txtpassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtpassMouseClicked
+        // TODO add your handling code here:
+//        String pass =  (String) txtpass.getText();
+//        if(pass.equals("")||pass.length()==0||pass==null){
+        underbgP.setBackground(Color.blue);
+//        }
+    }//GEN-LAST:event_txtpassMouseClicked
+
+    private void txtpassMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtpassMouseExited
+        // TODO add your handling code here:
+        //underbgP.setBackground(Color.gray);
+
+
+    }//GEN-LAST:event_txtpassMouseExited
+
+    private void txtpassMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtpassMousePressed
+        // TODO add your handling code here:
+        //underbgP.setBackground(Color.blue);
+    }//GEN-LAST:event_txtpassMousePressed
+
+    private void txtpassMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtpassMouseReleased
+        // TODO add your handling code here:
+        underbgP.setBackground(Color.GRAY);
+
+    }//GEN-LAST:event_txtpassMouseReleased
+
+    private void txtpassFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtpassFocusLost
+        // TODO add your handling code here:
+        underbgP.setBackground(Color.GRAY);
+
+    }//GEN-LAST:event_txtpassFocusLost
+
+    private void txtpassKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpassKeyPressed
+        // TODO add your handling code here:
+        // TODO add your handling code here:
+        String pass = (String) txtpass.getText();
+        if (!pass.equals("") && pass != null) {
+            eyehide.setVisible(true);
+        } else {
+            eyehide.setVisible(false);
+
+        }
+    }//GEN-LAST:event_txtpassKeyPressed
+
+    private void txtpassKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpassKeyReleased
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_txtpassKeyReleased
+
+    private void txtEmailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtEmailMouseClicked
+        // TODO add your handling code here:
+        underbgE1.setBackground(Color.blue);
+    }//GEN-LAST:event_txtEmailMouseClicked
+
+    private void txtEmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusLost
+        // TODO add your handling code here:
+        underbgE1.setBackground(Color.GRAY);
+
+    }//GEN-LAST:event_txtEmailFocusLost
+
+    private void eyehideMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eyehideMouseClicked
+        // TODO add your handling code here:
+        txtpass.setEchoChar((char) 0);
+        eyehide.setVisible(false);
+        eyeshow.setVisible(true);
+
+    }//GEN-LAST:event_eyehideMouseClicked
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void eyeshowMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eyeshowMouseClicked
+        // TODO add your handling code here:
+        txtpass.setEchoChar('\u25CF');
+        eyehide.setVisible(true);
+        eyeshow.setVisible(false);
+    }//GEN-LAST:event_eyeshowMouseClicked
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        HomeFrame hF = new HomeFrame();
+        hF.setVisible(true);
+        
+    }//GEN-LAST:event_btnLoginMouseClicked
 
     /**
      * @param args the command line arguments
@@ -191,17 +330,21 @@ public class LoginFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnLogin;
+    private javax.swing.JLabel btnclose;
+    private javax.swing.JLabel eyehide;
+    private javax.swing.JLabel eyeshow;
     private javax.swing.ButtonGroup groupIsAdminofStaff;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JRadioButton isAdmin;
+    private javax.swing.JRadioButton isStaff;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JPasswordField txtpass;
+    private javax.swing.JLabel underbgE1;
+    private javax.swing.JLabel underbgP;
     // End of variables declaration//GEN-END:variables
 }
