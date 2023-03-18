@@ -5,6 +5,11 @@
  */
 package project2022.javaswing.view;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
 
@@ -17,7 +22,7 @@ public class HomeFrame extends javax.swing.JFrame {
     /**
      * Creates new form HomeFrame
      */
-    public HomeFrame() {
+    public HomeFrame() throws SQLException {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
         jDesktopPane1.removeAll();
@@ -177,11 +182,19 @@ public class HomeFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void btnManagementBookingRoomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnManagementBookingRoomMouseClicked
-        // TODO add your handling code here:
-        jDesktopPane1.getComponent(0).setVisible(false);
-        jDesktopPane1.removeAll();
-        BookingRoom bk = new BookingRoom();
-        jDesktopPane1.add(bk).setVisible(true);
+        try {
+            // TODO add your handling code here:
+            jDesktopPane1.getComponent(0).setVisible(false);
+            jDesktopPane1.removeAll();
+            BookingRoom bk;
+            
+            bk = new BookingRoom();
+            
+            bk.setSize(1225, 1000);
+            jDesktopPane1.add(bk).setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(HomeFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnManagementBookingRoomMouseClicked
 
     private void btnManagementFoodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagementFoodActionPerformed
@@ -189,6 +202,8 @@ public class HomeFrame extends javax.swing.JFrame {
         jDesktopPane1.getComponent(0).setVisible(false);
         jDesktopPane1.remove(0);
         MangamentFood mF = new MangamentFood();
+        mF.setSize(1225, 1000);
+
         jDesktopPane1.add(mF).setVisible(true);
     }//GEN-LAST:event_btnManagementFoodActionPerformed
 
@@ -197,6 +212,8 @@ public class HomeFrame extends javax.swing.JFrame {
         jDesktopPane1.getComponent(0).setVisible(false);
         jDesktopPane1.remove(0);
         ManagementEmployee Me = new project2022.javaswing.view.ManagementEmployee();
+        Me.setSize(1225, 1000);
+
         jDesktopPane1.add(Me).setVisible(true);
     }//GEN-LAST:event_btnManagementEmplActionPerformed
 
@@ -205,6 +222,8 @@ public class HomeFrame extends javax.swing.JFrame {
         jDesktopPane1.getComponent(0).setVisible(false);
         jDesktopPane1.remove(0);
         ManagementRoom mR = new ManagementRoom();
+        mR.setSize(1225, 1000);
+
         jDesktopPane1.add(mR).setVisible(true);
     }//GEN-LAST:event_btnManagementRoomActionPerformed
 
@@ -213,6 +232,8 @@ public class HomeFrame extends javax.swing.JFrame {
         jDesktopPane1.getComponent(0).setVisible(false);
         jDesktopPane1.remove(0);
         ManagementGuess mG = new ManagementGuess();
+        mG.setSize(1225, 1000);
+
         jDesktopPane1.add(mG).setVisible(true);
     }//GEN-LAST:event_btnManagementGuessActionPerformed
 
@@ -221,6 +242,8 @@ public class HomeFrame extends javax.swing.JFrame {
         jDesktopPane1.getComponent(0).setVisible(false);
         jDesktopPane1.remove(0);
         ManagementStatistics mS = new ManagementStatistics();
+        mS.setSize(1225, 1000);
+
         jDesktopPane1.add(mS);
         mS.setVisible(true);
 
@@ -260,7 +283,11 @@ public class HomeFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HomeFrame().setVisible(true);
+                try {
+                    new HomeFrame().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(HomeFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

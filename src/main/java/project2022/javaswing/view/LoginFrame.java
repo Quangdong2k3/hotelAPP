@@ -291,17 +291,17 @@ public class LoginFrame extends javax.swing.JFrame {
     private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
         // TODO add your handling code here:
 
-        UserDao ud = new UserDao();
-        String uemail = txtEmail.getText();
-        String upass = txtPass.getText();
-        String error = "Login fail";
-        if (ud.checkLogin(uemail, upass) == true) {
+//        UserDao ud = new UserDao();
+//        String uemail = txtEmail.getText();
+//        String upass = txtPass.getText();
+//        String error = "Login fail";
+//        if (ud.checkLogin(uemail, upass) == true) {
             this.setVisible(false);
             HomeFrame hF = new HomeFrame();
             hF.setVisible(true);
-        } else {
-            JOptionPane.showMessageDialog(this, error);
-        }
+//        } else {
+//            JOptionPane.showMessageDialog(this, error);
+//        }
 
 
     }//GEN-LAST:event_btnLoginMouseClicked

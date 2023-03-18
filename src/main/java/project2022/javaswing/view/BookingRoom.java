@@ -5,17 +5,79 @@
  */
 package project2022.javaswing.view;
 
+import java.awt.Button;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import project2022.javaswing.config.DBConnection;
+
 /**
  *
  * @author Computer
  */
-public class BookingRoom extends javax.swing.JInternalFrame {
+public class BookingRoom extends javax.swing.JInternalFrame implements ActionListener {
+
+    private int count = 0;
 
     /**
      * Creates new form BookingRoom
      */
-    public BookingRoom() {
+    public BookingRoom() throws SQLException {
         initComponents();
+        showRoom();
+    }
+
+    private void showRoom() throws SQLException {
+        int x = 20;
+        int y = 50;
+        Connection conn = null;
+        DBConnection db = new DBConnection();
+        ResultSet rs;
+        Statement st;
+        String query;
+
+        try {
+            query = "SELECT * FROM phong";
+            conn = db.getConnection();
+            st = conn.createStatement();
+            rs = st.executeQuery(query);
+            rs = st.executeQuery(query);
+            while (rs.next()) {
+                JButton btn = new JButton();
+                btn.addActionListener((ActionListener) this);
+
+                btn.setBounds(x, y, 150, 70);
+                btn.setBackground(new java.awt.Color(102, 255, 102));
+                btn.setText(rs.getString("tenphong"));
+                btn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+                btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bedroom (1).png")));
+                String p = String.valueOf(rs.getInt("maphong"));
+                btn.setActionCommand(p);
+
+                if (count % 5 == 0) {
+                    y += 100;
+                    x = 20;
+                    btn.setBounds(x, y, 150, 70);
+
+                }
+                count++;
+
+                x += 220;
+                this.add(btn);
+
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        } finally {
+            conn.close();
+        }
+
     }
 
     /**
@@ -38,16 +100,16 @@ public class BookingRoom extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(342, 342, 342)
+                .addContainerGap()
                 .addComponent(jLabel1)
-                .addContainerGap(421, Short.MAX_VALUE))
+                .addContainerGap(753, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(88, 88, 88)
+                .addContainerGap()
                 .addComponent(jLabel1)
-                .addContainerGap(362, Short.MAX_VALUE))
+                .addContainerGap(443, Short.MAX_VALUE))
         );
 
         pack();
@@ -57,4 +119,17 @@ public class BookingRoom extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        for (int i = 0; i < count; i++) {
+            if (("10" + i).equalsIgnoreCase(e.getActionCommand())) {
+                DetailFrameBooking d = new DetailFrameBooking();
+                d.setVisible(true);
+                this.add(d);
+            }
+
+        }
+
+    }
 }

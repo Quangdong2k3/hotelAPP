@@ -22,7 +22,7 @@ public class DBConnection {
     
     public static Connection getConnection () {
         try {
-            conn = DriverManager.getConnection(url, "root", "admin");
+            conn = DriverManager.getConnection(url, "root", "");
         } catch (SQLException ex) {
             Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
         }
