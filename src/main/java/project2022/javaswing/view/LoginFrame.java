@@ -6,6 +6,9 @@
 package project2022.javaswing.view;
 
 import java.awt.Color;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import project2022.javaswing.dao.UserDao;
 
@@ -289,7 +292,8 @@ public class LoginFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
-        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
 
 //        UserDao ud = new UserDao();
 //        String uemail = txtEmail.getText();
@@ -302,6 +306,9 @@ public class LoginFrame extends javax.swing.JFrame {
 //        } else {
 //            JOptionPane.showMessageDialog(this, error);
 //        }
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
 
     }//GEN-LAST:event_btnLoginMouseClicked
